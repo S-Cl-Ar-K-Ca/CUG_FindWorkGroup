@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CUG_FindWorkGroup.iml" filepath="$PROJECT_DIR$/CUG_FindWorkGroup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sanbox/Sanbox.iml" filepath="$PROJECT_DIR$/Sanbox/Sanbox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sandbox/Sandbox.iml" filepath="$PROJECT_DIR$/Sandbox/Sandbox.iml" />
     </modules>
   </component>
 </project>
