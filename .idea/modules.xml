@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CUG_FindWorkGroup.iml" filepath="$PROJECT_DIR$/CUG_FindWorkGroup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CodeWork/CodeWork.iml" filepath="$PROJECT_DIR$/CodeWork/CodeWork.iml" />
     </modules>
   </component>
 </project>
