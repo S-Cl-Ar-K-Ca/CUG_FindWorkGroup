@@ -15,7 +15,7 @@ public class QiShuiSolution {
             }
         }
         for (Integer i:inputs) {
-            System.out.println(getResult(i));
+            System.out.println(getResult02(i));
         }
     }
 
@@ -34,6 +34,24 @@ public class QiShuiSolution {
                 s = s.replaceFirst("111","1");
             }
             if("11".equals(s)){
+                res++;
+            }
+        }
+        return res;
+    }
+
+    public static int getResult02(int a){
+        int res = 0;
+        if(a <=1 ) { return res; }
+        else if(a == 2){return 1;}
+        else {
+            while( a>=3 ){
+                int x = a/3;
+                res = res + x;
+                int y = a%3;
+                a = x + y;
+            }
+            if(a==2){
                 res++;
             }
         }
