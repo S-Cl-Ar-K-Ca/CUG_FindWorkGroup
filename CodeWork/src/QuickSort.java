@@ -4,14 +4,24 @@ public class QuickSort {
         System.out.print("begin");
         quickSortFun(arr,0,arr.length-1);
         for (int i:arr) {
-            System.out.println(i);
+            System.out.print(i);
+            System.out.print(" ");
         }
     }
 
-    public static int partition(int arr[],int left ,int right){
+    public static void quickSortFun(int []arr,int left, int right){
+        if (left >= right){
+            return;
+        }
+        int mid = partition(arr,left,right);
+        quickSortFun(arr,left,mid);
+        quickSortFun(arr,mid+1,right);
+    }
+
+    public  static int partition(int []arr,int left,int right){
         int pivot = arr[left];
         int pivotIndex = left;
-        while(left < right){
+        while (left < right){
             while(left < right && arr[right] >= pivot)
                 right--;
             arr[left] = arr[right];
@@ -24,12 +34,4 @@ public class QuickSort {
         return  pivotIndex;
     }
 
-    public static void quickSortFun(int arr[],int left,int right){
-        if(left >= right){
-            return;
-        }
-        int mid = partition(arr,left,right);
-        quickSortFun(arr,left,mid);
-        quickSortFun(arr,mid+1,right);
-    }
 }
