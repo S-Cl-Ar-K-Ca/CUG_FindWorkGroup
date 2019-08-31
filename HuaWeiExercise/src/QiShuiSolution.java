@@ -15,7 +15,7 @@ public class QiShuiSolution {
             }
         }
         for (Integer i:inputs) {
-            System.out.println(getResult02(i));
+            System.out.println(getResult03(i));
         }
     }
 
@@ -55,6 +55,11 @@ public class QiShuiSolution {
                 res++;
             }
         }
+        return res;
+    }
+
+    public static int getResult03(int a) {
+        int res = a / 2;
         return res;
     }
 }
