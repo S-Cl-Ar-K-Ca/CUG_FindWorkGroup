@@ -127,9 +127,60 @@ public class treeNode {
         }
 
     }
-
+    /*前序遍历非递归*/
     public void frontTraversal05(treeNode node){
+        Stack<treeNode> stackOfNode = new Stack<>();
+        while (node != null || !stackOfNode.isEmpty()){
+            while (node != null){
+                System.out.print(node.data + " ");
+                stackOfNode.push(node);
+                node = node.left;
+            }
+            if(!stackOfNode.isEmpty()){
+                node = stackOfNode.pop();
+                node = node.right;
+            }
+        }
+    }
 
+    /*中序遍历非递归*/
+    public void frontTraversal06(treeNode node){
+        Stack<treeNode> stackOfNode = new Stack<>();
+        while (node != null || !stackOfNode.isEmpty()){
+            while (node != null){
+                stackOfNode.push(node);
+                node = node.left;
+            }
+            if(!stackOfNode.isEmpty()){
+                node = stackOfNode.pop();
+                System.out.print(node.data + " ");
+                node = node.right;
+            }
+        }
+    }
+
+    /*后序遍历非递归*/
+    public void frontTraversal07(treeNode node){
+        Stack<treeNode> stackOfNode = new Stack<>();
+        Stack<Integer> stackOfState = new Stack<>();
+        int state = 1;
+        while (node != null || !stackOfNode.isEmpty()){
+            while (node != null){
+                stackOfNode.push(node);
+                stackOfState.push(0);
+                node = node.left;
+            }
+            while ( !stackOfNode.isEmpty() && stackOfState.peek() == state){
+                stackOfState.pop();
+                System.out.print(stackOfNode.pop().data+" ");
+            }
+            if(!stackOfNode.isEmpty()){
+                stackOfState.pop();
+                stackOfState.push(1);
+                node = stackOfNode.peek();
+                node = node.right;
+            }
+        }
     }
 /*	//前序遍历
 	public void frontTraversal(treeNode node) {
