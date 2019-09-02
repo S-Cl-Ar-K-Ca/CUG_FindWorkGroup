@@ -10,7 +10,10 @@ public class ErrorCount {
         String messageLine = null;
         // 需要有序，循环读入，只读取最后8条
         Map<String, Integer> linkedHashMap = new LinkedHashMap<>();
-        while ((messageLine = bufferedReader.readLine()) != null && !messageLine.equals("")) {
+        while ((messageLine = bufferedReader.readLine()) != null ) {
+            if(!messageLine.contains(" ")){
+                break;
+            }
             String[] msgs = messageLine.split(" ");
             String msgFilename = msgs[0];
             String msgLocation = msgs[1];
