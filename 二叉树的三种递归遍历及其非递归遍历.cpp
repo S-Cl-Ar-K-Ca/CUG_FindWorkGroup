@@ -19,16 +19,16 @@ BTreeNode* random_btree_generator( const int cnt = 10 ){
     uniform_int_distribution<> ui_dbtion(0,1000);
 
     BTreeNode *root = new BTreeNode();
-    vector< BTreeNode* > vpbtn{ root };//ÀûÓÃÁ´±íÀ´±£´æÉú³ÉµÄÒ¶×Ó½ÚµãÖ¸Õë
+    vector< BTreeNode* > vpbtn{ root };//åˆ©ç”¨vectoræ¥ä¿å­˜ç”Ÿæˆçš„å¶å­èŠ‚ç‚¹æŒ‡é’ˆ
     for( int i = 0; i < cnt; ++i ){
-        int rdom  = ui_dbtion(dr_engine); //Éú³ÉÒ»¸öËæ»úÊı
-        auto iter = vpbtn.begin()+ rdom % vpbtn.size();//Ëæ»úÖ¸ÏòÒ»¸öÒ¶×Ó½ÚµãÖ¸Õë
+        int rdom  = ui_dbtion(dr_engine); //ç”Ÿæˆä¸€ä¸ªéšæœºæ•°
+        auto iter = vpbtn.begin()+ rdom % vpbtn.size();//éšæœºæŒ‡å‘ä¸€ä¸ªå¶å­èŠ‚ç‚¹æŒ‡é’ˆ
 
-        BTreeNode *pbtn   = *iter;        // lpbtnÁ´±íÖĞÖÁÉÙÓĞÒ»¸öÒ¶×Ó½ÚµãÖ¸Õë
+        BTreeNode *pbtn   = *iter;        // vpbtné“¾è¡¨ä¸­è‡³å°‘æœ‰ä¸€ä¸ªå¶å­èŠ‚ç‚¹æŒ‡é’ˆ
         BTreeNode *pleft  = nullptr;
         BTreeNode *pright = nullptr;
 
-        vpbtn.erase(iter);//ÒÑ¾­ÊÇ·ÇÒ¶×Ó½ÚµãÁË£¬´ÓvectorÖĞÒÆ³ı
+        vpbtn.erase(iter);//å·²ç»æ˜¯éå¶å­èŠ‚ç‚¹äº†ï¼Œä»vectorä¸­ç§»é™¤
 
         switch( rdom % 3 ){
         case 0:
@@ -71,10 +71,10 @@ void display_traversal_result( vector<int> &tresult ){
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-//µİ¹é     recursive
-//·Çµİ¹é   non-recursive
-//Ç°Ğò±éÀú preorder traversal
-//Ç°Ğò±éÀúµİ¹éËã·¨ ½«±éÀú½á¹û±£´æµ½Ò»¸ö vector ÖĞ
+//é€’å½’     recursive
+//éé€’å½’   non-recursive
+//å‰åºéå† preorder traversal
+//å‰åºéå†é€’å½’ç®—æ³• å°†éå†ç»“æœä¿å­˜åˆ°ä¸€ä¸ª vector ä¸­
 void recursive_preorder_traversal(BTreeNode *root, vector<int> &result ){
     if( root == nullptr )
         return;
@@ -84,7 +84,7 @@ void recursive_preorder_traversal(BTreeNode *root, vector<int> &result ){
     return;
 }
 
-//Ç°Ğò±éÀú·Çµİ¹éËã·¨
+//å‰åºéå†éé€’å½’ç®—æ³•
 void non_recursive_preorder_traversal(BTreeNode *root, vector<int> &result ){
     BTreeNode *pbtn = root;
     stack<BTreeNode*> spbtn;
@@ -105,34 +105,34 @@ void non_recursive_preorder_traversal(BTreeNode *root, vector<int> &result ){
     return;
 }
 
-//ÑéÖ¤´úÂë
+//éªŒè¯ä»£ç 
 void dlr_test( BTreeNode *root ){
     vector< int > rresutt;
     vector< int > nrresult;
 
-    cout << "Ç°Ğòµİ¹é±éÀú½á¹ûÈçÏÂ:" << endl;
+    cout << "å‰åºé€’å½’éå†ç»“æœå¦‚ä¸‹:" << endl;
     recursive_preorder_traversal(root, rresutt);
     display_traversal_result( rresutt );
 
-    cout <<"\n\nÇ°Ğò·Çµİ¹é±éÀú½á¹ûÈçÏÂ:" << endl;
+    cout <<"\n\nå‰åºéé€’å½’éå†ç»“æœå¦‚ä¸‹:" << endl;
     non_recursive_preorder_traversal(root, nrresult);
     display_traversal_result(nrresult);
 
     cout << endl << endl;
     if( rresutt == nrresult ){
-        cout << "µİ¹éËã·¨Óë·Çµİ¹éËã·¨±éÀú½á¹ûÒ»Ñù£¡" << endl;
+        cout << "é€’å½’ç®—æ³•ä¸éé€’å½’ç®—æ³•éå†ç»“æœä¸€æ ·ï¼" << endl;
     }else {
-        cout << "µİ¹éËã·¨Óë·Çµİ¹éËã·¨±éÀú½á¹û²»Ò»Ñù£¡" << endl;
+        cout << "é€’å½’ç®—æ³•ä¸éé€’å½’ç®—æ³•éå†ç»“æœä¸ä¸€æ ·ï¼" << endl;
     }
     return;
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-//µİ¹é     recursive
-//·Çµİ¹é   non-recursive
-//ÖĞĞò±éÀú inorder traversal
-//ÖĞĞò±éÀúµİ¹éËã·¨£¬½«±éÀú½á¹û±£´æµ½Ò»¸ö vector ÖĞ
+//é€’å½’     recursive
+//éé€’å½’   non-recursive
+//ä¸­åºéå† inorder traversal
+//ä¸­åºéå†é€’å½’ç®—æ³•ï¼Œå°†éå†ç»“æœä¿å­˜åˆ°ä¸€ä¸ª vector ä¸­
 void recursive_inorder_traversal( BTreeNode *root, vector<int> &result ){
     if( root == nullptr )
         return;
@@ -141,7 +141,7 @@ void recursive_inorder_traversal( BTreeNode *root, vector<int> &result ){
     recursive_inorder_traversal(root->prchild, result);
 }
 
-//ÖĞĞò±éÀú·Çµİ¹éËã·¨£¬½«±éÀú½á¹û±£´æµ½Ò»¸ö vector ÖĞ
+//ä¸­åºéå†éé€’å½’ç®—æ³•ï¼Œå°†éå†ç»“æœä¿å­˜åˆ°ä¸€ä¸ª vector ä¸­
 void non_recursive_inorder_traversal( BTreeNode *root, vector<int> &result ){
     BTreeNode *pbtn = root;
     stack<BTreeNode*> spbtn;
@@ -161,34 +161,34 @@ void non_recursive_inorder_traversal( BTreeNode *root, vector<int> &result ){
     return;
 }
 
-//ÑéÖ¤´úÂë
+//éªŒè¯ä»£ç 
 void ldr_test( BTreeNode *root ){
     vector< int > rresutt;
     vector< int > nrresult;
 
-    cout << "ÖĞĞòµİ¹é±éÀú½á¹ûÈçÏÂ:" << endl;
+    cout << "ä¸­åºé€’å½’éå†ç»“æœå¦‚ä¸‹:" << endl;
     recursive_inorder_traversal(root, rresutt);
     display_traversal_result( rresutt );
 
-    cout <<"\n\nÖĞĞò·Çµİ¹é±éÀú½á¹ûÈçÏÂ:" << endl;
+    cout <<"\n\nä¸­åºéé€’å½’éå†ç»“æœå¦‚ä¸‹:" << endl;
     non_recursive_inorder_traversal(root, nrresult);
     display_traversal_result(nrresult);
 
     cout << endl << endl;
     if( rresutt == nrresult ){
-        cout << "µİ¹éËã·¨Óë·Çµİ¹éËã·¨±éÀú½á¹ûÒ»Ñù£¡" << endl;
+        cout << "é€’å½’ç®—æ³•ä¸éé€’å½’ç®—æ³•éå†ç»“æœä¸€æ ·ï¼" << endl;
     }else {
-        cout << "µİ¹éËã·¨Óë·Çµİ¹éËã·¨±éÀú½á¹û²»Ò»Ñù£¡" << endl;
+        cout << "é€’å½’ç®—æ³•ä¸éé€’å½’ç®—æ³•éå†ç»“æœä¸ä¸€æ ·ï¼" << endl;
     }
     return;
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-//µİ¹é     recursive
-//·Çµİ¹é   non-recursive
-//ºóĞò±éÀú postorder traversal
-//ºóĞò±éÀúµİ¹éËã·¨£¬½«±éÀú½á¹û±£´æµ½Ò»¸ö vector ÖĞ
+//é€’å½’     recursive
+//éé€’å½’   non-recursive
+//ååºéå† postorder traversal
+//ååºéå†é€’å½’ç®—æ³•ï¼Œå°†éå†ç»“æœä¿å­˜åˆ°ä¸€ä¸ª vector ä¸­
 void recursive_postorder_traversal( BTreeNode *root, vector<int> &result ){
     if( root == nullptr )
         return;
@@ -198,7 +198,7 @@ void recursive_postorder_traversal( BTreeNode *root, vector<int> &result ){
     return;
 }
 
-//ºóĞò±éÀú·Çµİ¹éËã·¨£¬½«±éÀú½á¹û±£´æµ½Ò»¸övector ÖĞ
+//ååºéå†éé€’å½’ç®—æ³•ï¼Œå°†éå†ç»“æœä¿å­˜åˆ°ä¸€ä¸ªvector ä¸­
 void non_recursive_postorder_traversal( BTreeNode *root, vector<int> &result ){
     BTreeNode *pbtn = root;
     stack<bool> visited;
@@ -229,24 +229,24 @@ void non_recursive_postorder_traversal( BTreeNode *root, vector<int> &result ){
     return;
 }
 
-//ÑéÖ¤´úÂë
+//éªŒè¯ä»£ç 
 void lrd_test( BTreeNode *root ){
     vector< int > rresutt;
     vector< int > nrresult;
 
-    cout << "ºóĞòµİ¹é±éÀú½á¹ûÈçÏÂ:" << endl;
+    cout << "ååºé€’å½’éå†ç»“æœå¦‚ä¸‹:" << endl;
     recursive_postorder_traversal(root, rresutt);
     display_traversal_result( rresutt );
 
-    cout <<"\n\nºóĞò·Çµİ¹é±éÀú½á¹ûÈçÏÂ:" << endl;
+    cout <<"\n\nååºéé€’å½’éå†ç»“æœå¦‚ä¸‹:" << endl;
     non_recursive_postorder_traversal(root, nrresult);
     display_traversal_result(nrresult);
 
     cout << endl << endl;
     if( rresutt == nrresult ){
-        cout << "µİ¹éËã·¨Óë·Çµİ¹éËã·¨±éÀú½á¹ûÒ»Ñù£¡" << endl;
+        cout << "é€’å½’ç®—æ³•ä¸éé€’å½’ç®—æ³•éå†ç»“æœä¸€æ ·ï¼" << endl;
     }else {
-        cout << "µİ¹éËã·¨Óë·Çµİ¹éËã·¨±éÀú½á¹û²»Ò»Ñù£¡" << endl;
+        cout << "é€’å½’ç®—æ³•ä¸éé€’å½’ç®—æ³•éå†ç»“æœä¸ä¸€æ ·ï¼" << endl;
     }
     return;
 }
@@ -257,13 +257,13 @@ int main(){
 
     BTreeNode *root = random_btree_generator(500);
 
-    dlr_test( root );//Ç°Ğò
+    dlr_test( root );//å‰åº
     cout << endl << endl << endl << endl;
 
-    ldr_test( root );//ÖĞĞò
+    ldr_test( root );//ä¸­åº
     cout << endl << endl << endl << endl;
 
-    lrd_test( root );//ºóĞò
+    lrd_test( root );//ååº
     cout << endl << endl << endl << endl;
 
     btree_destructor(root);
