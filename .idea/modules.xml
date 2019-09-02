@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CUG_FindWorkGroup.iml" filepath="$PROJECT_DIR$/CUG_FindWorkGroup.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CodeWork/CodeWork.iml" filepath="$PROJECT_DIR$/CodeWork/CodeWork.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimpleSort/HuaWeiEaxm.iml" filepath="$PROJECT_DIR$/SimpleSort/HuaWeiEaxm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuaWeiExercise/HuaWeiExercise.iml" filepath="$PROJECT_DIR$/HuaWeiExercise/HuaWeiExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SimpleSort/SimpleSort.iml" filepath="$PROJECT_DIR$/SimpleSort/SimpleSort.iml" />
     </modules>
   </component>
 </project>
