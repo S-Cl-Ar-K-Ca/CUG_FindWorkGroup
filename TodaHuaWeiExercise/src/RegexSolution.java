@@ -17,5 +17,8 @@ public class RegexSolution {
         System.out.println(s3.replaceAll(regex3,"*"));
         System.out.println(s3.replaceAll(regex4,"*"));
         System.out.println(s3.replaceAll(regex5,"*"));
+
+        String s4 = "YUANzhi1987";
+        System.out.println(s4.replaceAll("[w-z]","1"));
     }
 }
