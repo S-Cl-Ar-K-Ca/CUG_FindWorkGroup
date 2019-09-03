@@ -10,7 +10,7 @@ public class QuickSort {
     }
 
     public static void quickSortFun(int []arr,int left, int right){
-        if (left >= right){
+        if(left >= right){
             return;
         }
         int mid = partition(arr,left,right);
@@ -22,12 +22,12 @@ public class QuickSort {
         int pivot = arr[left];
         int pivotIndex = left;
         while (left < right){
-            while(left < right && arr[right] >= pivot)
+            while (left < right && arr[right] >= pivot)
                 right--;
             arr[left] = arr[right];
-            while (left < right && arr[left] < pivot)
-                left++;
-            arr[right] = arr[left];
+           while (left < right && arr[left] < pivot)
+               left++;
+           arr[right] = arr[left];
         }
         arr[left] = pivot;
         pivotIndex = left;

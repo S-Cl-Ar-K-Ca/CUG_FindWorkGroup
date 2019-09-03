@@ -1,7 +1,6 @@
 public class RegexSolution {
+    /*https://www.cnblogs.com/xhj123/p/6032683.html*/
     public static void main(String[] args) {
-        System.out.println("Hello HuaWei!");
-
         String s = "1234567";
         String regex = "\\d+";
         System.out.println(s.matches(regex));
