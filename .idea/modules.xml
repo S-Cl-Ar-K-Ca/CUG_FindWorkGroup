@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CUG_FindWorkGroup.iml" filepath="$PROJECT_DIR$/CUG_FindWorkGroup.iml" />
       <module fileurl="file://$PROJECT_DIR$/TodaSimpleSort/HuaWeiEaxm.iml" filepath="$PROJECT_DIR$/TodaSimpleSort/HuaWeiEaxm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwardOffer/SwardOffer.iml" filepath="$PROJECT_DIR$/SwardOffer/SwardOffer.iml" />
       <module fileurl="file://$PROJECT_DIR$/TodaCodeWork/TodaCodeWork.iml" filepath="$PROJECT_DIR$/TodaCodeWork/TodaCodeWork.iml" />
       <module fileurl="file://$PROJECT_DIR$/TodaHuaWeiExercise/TodaHuaWeiExercise.iml" filepath="$PROJECT_DIR$/TodaHuaWeiExercise/TodaHuaWeiExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/TodaSimpleSort/TodaSimpleSort.iml" filepath="$PROJECT_DIR$/TodaSimpleSort/TodaSimpleSort.iml" />
