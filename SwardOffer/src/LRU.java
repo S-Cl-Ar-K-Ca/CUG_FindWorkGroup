@@ -73,3 +73,35 @@ public class LRU<K, V> {
         lruTest.print();
     }
 }
+
+class LRU0916<K,V> {
+    private  int size ;
+    private LinkedHashMap<K,V> map;
+
+    public LRU0916(int size){
+        this.size = size;
+        map = new LinkedHashMap<K,V>(size,1f,true){
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+                return size()>size;
+            }
+        };
+    }
+
+    public synchronized V get(K key){
+        return map.get(key);
+    }
+
+    public synchronized void put(K key,V value){
+        map.put(key,value);
+    }
+    public synchronized void clear(){
+        map.clear();
+    }
+
+    public synchronized void print(){
+        for (Map.Entry<K,V> entry: map.entrySet()) {
+            System.out.println(entry.getKey()+"-"+entry.getValue());
+        }
+    }
+}
