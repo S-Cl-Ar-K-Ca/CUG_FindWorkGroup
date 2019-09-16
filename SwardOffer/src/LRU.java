@@ -68,7 +68,7 @@ public class LRU<K, V> {
         lruTest.put(3, 3);
         lruTest.put(5, 5);
         lruTest.put(7,7);
-        lruTest.get(1);
+        lruTest.get(2);
         lruTest.put(6, 6);
         lruTest.print();
     }
