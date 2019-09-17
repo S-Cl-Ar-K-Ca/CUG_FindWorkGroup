@@ -21,17 +21,17 @@ public class QuickSort {
     public  static int partition(int []arr,int left,int right){
         int pivot = arr[left];
         int pivotIndex = left;
-        while (left < right){
-            while (left < right && arr[right] >= pivot)
+        while (left<right){
+            while (left<right && arr[right]>=pivot)
                 right--;
-            arr[left] = arr[right];
-           while (left < right && arr[left] < pivot)
-               left++;
-           arr[right] = arr[left];
+            arr[left]=arr[right];
+            while (left<right && arr[left]<pivot)
+                left++;
+            arr[right] = arr[left];
         }
         arr[left] = pivot;
         pivotIndex = left;
-        return  pivotIndex;
+        return pivotIndex;
     }
 
 }
