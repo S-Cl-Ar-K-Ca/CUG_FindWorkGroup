@@ -3,8 +3,8 @@ import java.util.Stack;
 
 public class treeNode {
     int data;
-    treeNode left;
-    treeNode right;
+    public treeNode left;
+    public treeNode right;
 
     public treeNode(int value) {
         this.data = value;
