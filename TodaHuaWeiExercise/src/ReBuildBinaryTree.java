@@ -6,6 +6,7 @@ public class ReBuildBinaryTree {
             return null;
         }
         treeNode root = reBuildBinaryTreeCore(forntOrder,0,forntOrder.length-1,midOrder,0,midOrder.length-1);
+        return root;
     }
 
     public treeNode reBuildBinaryTreeCore(int forntOrder[],int forntStart,
