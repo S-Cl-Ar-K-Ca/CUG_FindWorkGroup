@@ -19,7 +19,7 @@ public class FindKthNode {
             nex = nex.next;
         }
         while(nex.next!=null){
-            nex = nex.next;
+            nex = nex.next;f
             pre = pre.next;
         }
         return pre;
